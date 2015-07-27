@@ -5,25 +5,15 @@
 #define MAX 1000
 int main()
 {
-	char str[MAX]={0}, str1[MAX]={0};
+	char str[MAX]={0};
 	printf("Informe a frase: ");
 	scanf("%[^\n]s", str);
 	int i, topo=0;
 	for(i=0;i<strlen(str);i++)
-	{
-		if(str[i]==-61)
-			continue;
-		else
-		{
-			str1[topo] = change_char(&str[i]);
-			topo++;
-		}
-	}
-	str1[topo] = '\0';
-	topo++;
+		str[i] = change_char(&str[i]);
 	printf("\nFrase corrigida: ");
-	for(i=0;i<topo;i++)
-		printf("%c", str1[i]);
+	for(i=0;i<strlen(str);i++)
+		printf("%c", str[i]);
 	printf("\n");
 
 	return 0;
